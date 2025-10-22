@@ -160,9 +160,84 @@ function endGame(won) {
             <h2>${t('gameOverTitle')}</h2>
             <p>${t('gameOverMsg')}</p>
             <p>${t('gameOverAttempts')} ${attempts}${currentLanguage === 'ko' ? '회' : ''}</p>
+            <button id="shareBtn" class="share-btn" onclick="shareResult()">
+                <span class="share-icon">🔗</span> ${t('shareBtn')}
+            </button>
         `;
         document.getElementById('results').insertBefore(gameOverDiv, document.getElementById('results').firstChild);
     }
+}
+
+// 결과 공유 함수
+function shareResult() {
+    const shareText = generateShareText();
+
+    // Web Share API 지원 확인
+    if (navigator.share) {
+        navigator.share({
+            title: t('shareTitle'),
+            text: shareText,
+            url: window.location.href
+        })
+        .then(() => {
+            console.log('공유 성공');
+        })
+        .catch((error) => {
+            console.log('공유 취소 또는 실패:', error);
+            // Web Share API 실패 시 클립보드로 폴백
+            copyToClipboard(shareText);
+        });
+    } else {
+        // Web Share API 미지원 시 클립보드에 복사
+        copyToClipboard(shareText);
+    }
+}
+
+// 공유 텍스트 생성
+function generateShareText() {
+    const attemptText = currentLanguage === 'ko' ? `${attempts}회` : `${attempts} attempts`;
+    return `${t('shareText')} ${attemptText}!\n${window.location.href}`;
+}
+
+// 클립보드에 복사
+function copyToClipboard(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text)
+            .then(() => {
+                alert(t('shareCopied'));
+            })
+            .catch(() => {
+                // Clipboard API 실패 시 폴백
+                fallbackCopyToClipboard(text);
+            });
+    } else {
+        // Clipboard API 미지원 시 폴백
+        fallbackCopyToClipboard(text);
+    }
+}
+
+// 클립보드 복사 폴백 함수
+function fallbackCopyToClipboard(text) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.left = '-999999px';
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+
+    try {
+        const successful = document.execCommand('copy');
+        if (successful) {
+            alert(t('shareCopied'));
+        } else {
+            alert(t('shareFailed'));
+        }
+    } catch (err) {
+        alert(t('shareFailed'));
+    }
+
+    document.body.removeChild(textArea);
 }
 
 // 추측 제출

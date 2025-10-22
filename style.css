@@ -254,6 +254,27 @@ button {
     font-size: 1.2em;
 }
 
+.share-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    margin-top: 20px;
+    padding: 12px 30px;
+    font-size: 1em;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.share-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.share-icon {
+    font-size: 1.2em;
+}
+
 /* AdSense 광고 - 오른쪽 하단 */
 .ad-container-bottom-right {
     position: fixed;

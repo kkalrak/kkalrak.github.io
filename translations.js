@@ -25,7 +25,12 @@ const translations = {
         alertNumbersOnly: '숫자만 입력해주세요!',
         alertNoDuplicates: '중복되지 않은 숫자를 입력해주세요!',
         alertGameOver: '게임이 종료되었습니다. 새 게임을 시작해주세요!',
-        confirmReset: '새 게임을 시작하시겠습니까?'
+        confirmReset: '새 게임을 시작하시겠습니까?',
+        shareBtn: '결과 공유하기',
+        shareTitle: '숫자 야구 게임 결과',
+        shareText: '숫자 야구 게임을 클리어했습니다!',
+        shareCopied: '링크가 클립보드에 복사되었습니다!',
+        shareFailed: '공유에 실패했습니다. 다시 시도해주세요.'
     },
     en: {
         title: '⚾ Number Baseball Game',
@@ -52,7 +57,12 @@ const translations = {
         alertNumbersOnly: 'Please enter numbers only!',
         alertNoDuplicates: 'Please enter non-duplicate numbers!',
         alertGameOver: 'Game is over. Please start a new game!',
-        confirmReset: 'Do you want to start a new game?'
+        confirmReset: 'Do you want to start a new game?',
+        shareBtn: 'Share Result',
+        shareTitle: 'Number Baseball Game Result',
+        shareText: 'I cleared the Number Baseball Game in',
+        shareCopied: 'Link copied to clipboard!',
+        shareFailed: 'Failed to share. Please try again.'
     },
     ja: {
         title: '⚾ 数字野球ゲーム',
@@ -79,7 +89,12 @@ const translations = {
         alertNumbersOnly: '数字のみを入力してください！',
         alertNoDuplicates: '重複しない数字を入力してください！',
         alertGameOver: 'ゲームが終了しました。新しいゲームを始めてください！',
-        confirmReset: '新しいゲームを始めますか？'
+        confirmReset: '新しいゲームを始めますか？',
+        shareBtn: '結果を共有',
+        shareTitle: '数字野球ゲーム結果',
+        shareText: '数字野球ゲームをクリアしました！',
+        shareCopied: 'リンクがクリップボードにコピーされました！',
+        shareFailed: '共有に失敗しました。もう一度お試しください。'
     },
     zh: {
         title: '⚾ 数字棒球游戏',
@@ -106,7 +121,12 @@ const translations = {
         alertNumbersOnly: '请只输入数字！',
         alertNoDuplicates: '请输入不重复的数字！',
         alertGameOver: '游戏已结束。请开始新游戏！',
-        confirmReset: '要开始新游戏吗？'
+        confirmReset: '要开始新游戏吗？',
+        shareBtn: '分享结果',
+        shareTitle: '数字棒球游戏结果',
+        shareText: '我通关了数字棒球游戏！',
+        shareCopied: '链接已复制到剪贴板！',
+        shareFailed: '分享失败，请重试。'
     }
 };
 
