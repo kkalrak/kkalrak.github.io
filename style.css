@@ -253,3 +253,26 @@ button {
     color: #555;
     font-size: 1.2em;
 }
+
+/* AdSense 광고 - 오른쪽 하단 */
+.ad-container-bottom-right {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    max-width: 336px;
+}
+
+/* 모바일에서는 하단 중앙에 배치 */
+@media (max-width: 768px) {
+    .ad-container-bottom-right {
+        bottom: 10px;
+        right: 50%;
+        transform: translateX(50%);
+        max-width: 320px;
+    }
+}
