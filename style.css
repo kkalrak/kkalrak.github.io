@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.language-selector {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.lang-btn {
+    background: white;
+    border: 2px solid #667eea;
+    color: #667eea;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.lang-btn:hover {
+    background: #f0f4ff;
+    transform: translateY(-2px);
+}
+
+.lang-btn.active {
+    background: #667eea;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .language-selector {
+        position: static;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .lang-btn {
+        padding: 8px 12px;
+        font-size: 0.8em;
+    }
+}
+
+.container {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+.game-info {
+    background: #f0f4ff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.game-info p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.rules {
+    background: #fff9e6;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.rules h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.rules ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.rules li {
+    padding: 8px 0;
+    color: #555;
+}
+
+.rules strong {
+    color: #667eea;
+}
+
+.input-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+#guessInput {
+    flex: 1;
+    padding: 15px;
+    font-size: 1.2em;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    letter-spacing: 10px;
+}
+
+#guessInput:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#submitBtn {
+    background: #667eea;
+    color: white;
+}
+
+#submitBtn:hover {
+    background: #5568d3;
+    transform: translateY(-2px);
+}
+
+#resetBtn {
+    background: #ff6b6b;
+    color: white;
+}
+
+#resetBtn:hover {
+    background: #ee5555;
+    transform: translateY(-2px);
+}
+
+.attempts {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.attempts h3 {
+    color: #333;
+}
+
+#attemptCount {
+    color: #667eea;
+    font-size: 1.3em;
+}
+
+.results {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.result-item {
+    background: #f8f9fa;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.result-guess {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #333;
+    letter-spacing: 5px;
+}
+
+.result-feedback {
+    font-size: 1.1em;
+    color: #667eea;
+    font-weight: bold;
+}
+
+.success {
+    background: #d4edda;
+    border: 2px solid #28a745;
+}
+
+.success .result-feedback {
+    color: #28a745;
+}
+
+.game-over {
+    background: #d4edda;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    margin-top: 20px;
+    animation: celebrate 0.5s ease;
+}
+
+@keyframes celebrate {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.game-over h2 {
+    color: #28a745;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.game-over p {
+    color: #555;
+    font-size: 1.2em;
+}

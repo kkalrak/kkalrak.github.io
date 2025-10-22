@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="title">숫자 야구 게임</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="language-selector">
+        <button class="lang-btn active" data-lang="ko">🇰🇷 한국어</button>
+        <button class="lang-btn" data-lang="en">🇺🇸 English</button>
+        <button class="lang-btn" data-lang="ja">🇯🇵 日本語</button>
+        <button class="lang-btn" data-lang="zh">🇨🇳 中文</button>
+    </div>
+
+    <div class="container">
+        <h1 data-i18n="title">⚾ 숫자 야구 게임</h1>
+
+        <div class="game-info">
+            <p data-i18n="info1">컴퓨터가 0-9 사이의 서로 다른 숫자 3개를 선택했습니다.</p>
+            <p data-i18n="info2">숫자와 위치를 모두 맞춰보세요!</p>
+        </div>
+
+        <div class="rules">
+            <h3 data-i18n="rulesTitle">게임 규칙</h3>
+            <ul>
+                <li><strong data-i18n="ruleStrike">스트라이크:</strong> <span data-i18n="ruleStrikeDesc">숫자와 위치가 모두 맞음</span></li>
+                <li><strong data-i18n="ruleBall">볼:</strong> <span data-i18n="ruleBallDesc">숫자는 맞지만 위치가 틀림</span></li>
+                <li><strong data-i18n="ruleOut">아웃:</strong> <span data-i18n="ruleOutDesc">맞는 숫자가 없음</span></li>
+            </ul>
+        </div>
+
+        <div class="input-section">
+            <input type="text" id="guessInput" maxlength="3" data-i18n-placeholder="inputPlaceholder" placeholder="3자리 숫자 입력">
+            <button id="submitBtn" data-i18n="submitBtn" onclick="submitGuess()">확인</button>
+            <button id="resetBtn" data-i18n="resetBtn" onclick="resetGame()">새 게임</button>
+        </div>
+
+        <div class="attempts">
+            <h3><span data-i18n="attemptsTitle">시도 횟수:</span> <span id="attemptCount">0</span></h3>
+        </div>
+
+        <div id="results" class="results">
+            <!-- 결과가 여기에 표시됩니다 -->
+        </div>
+    </div>
+
+    <script src="translations.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
