@@ -69,11 +69,25 @@ body {
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        border-radius: 15px;
+    }
+}
+
 h1 {
     text-align: center;
     color: #333;
     margin-bottom: 20px;
     font-size: 2.5em;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
 }
 
 .game-info {
@@ -87,6 +101,17 @@ h1 {
 .game-info p {
     color: #555;
     line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .game-info {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    .game-info p {
+        font-size: 0.9em;
+    }
 }
 
 .rules {
@@ -115,10 +140,34 @@ h1 {
     color: #667eea;
 }
 
+@media (max-width: 768px) {
+    .rules {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .rules h3 {
+        font-size: 1.1em;
+    }
+
+    .rules li {
+        font-size: 0.9em;
+        padding: 6px 0;
+    }
+}
+
 .input-section {
     display: flex;
     gap: 10px;
     margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+    .input-section {
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
 }
 
 #guessInput {
@@ -136,6 +185,15 @@ h1 {
     border-color: #667eea;
 }
 
+@media (max-width: 768px) {
+    #guessInput {
+        width: 100%;
+        padding: 16px;
+        font-size: 1.3em;
+        letter-spacing: 8px;
+    }
+}
+
 button {
     padding: 15px 30px;
     font-size: 1em;
@@ -144,6 +202,16 @@ button {
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s;
+    min-height: 48px;
+}
+
+@media (max-width: 768px) {
+    button {
+        width: 100%;
+        padding: 16px 20px;
+        font-size: 1.1em;
+        min-height: 52px;
+    }
 }
 
 #submitBtn {
@@ -180,9 +248,25 @@ button {
     font-size: 1.3em;
 }
 
+@media (max-width: 768px) {
+    .attempts h3 {
+        font-size: 1.1em;
+    }
+
+    #attemptCount {
+        font-size: 1.2em;
+    }
+}
+
 .results {
     max-height: 400px;
     overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+    .results {
+        max-height: 300px;
+    }
 }
 
 .result-item {
@@ -194,6 +278,15 @@ button {
     justify-content: space-between;
     align-items: center;
     animation: slideIn 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .result-item {
+        padding: 12px;
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
 }
 
 @keyframes slideIn {
@@ -214,10 +307,23 @@ button {
     letter-spacing: 5px;
 }
 
+@media (max-width: 768px) {
+    .result-guess {
+        font-size: 1.2em;
+        letter-spacing: 3px;
+    }
+}
+
 .result-feedback {
     font-size: 1.1em;
     color: #667eea;
     font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .result-feedback {
+        font-size: 1em;
+    }
 }
 
 .success {
@@ -254,6 +360,21 @@ button {
     font-size: 1.2em;
 }
 
+@media (max-width: 768px) {
+    .game-over {
+        padding: 20px;
+        margin-top: 15px;
+    }
+
+    .game-over h2 {
+        font-size: 1.5em;
+    }
+
+    .game-over p {
+        font-size: 1em;
+    }
+}
+
 .share-btn {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
@@ -269,6 +390,15 @@ button {
 .share-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+@media (max-width: 768px) {
+    .share-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px;
+        font-size: 1.05em;
+    }
 }
 
 .share-icon {
@@ -291,9 +421,41 @@ button {
 /* 모바일에서는 하단 중앙에 배치 */
 @media (max-width: 768px) {
     .ad-container-bottom-right {
-        bottom: 10px;
-        right: 50%;
-        transform: translateX(50%);
-        max-width: 320px;
+        bottom: 5px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        max-width: calc(100% - 20px);
+        padding: 8px;
+    }
+}
+
+/* 작은 모바일 화면 추가 최적화 */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .game-info p,
+    .rules li {
+        font-size: 0.85em;
+    }
+
+    #guessInput {
+        font-size: 1.1em;
+        padding: 14px;
+    }
+
+    button {
+        font-size: 1em;
+        padding: 14px 16px;
     }
 }
